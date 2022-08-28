@@ -1,0 +1,30 @@
+.education {
+  padding: 3rem 5rem;
+
+  &__heading {
+    padding: 4rem 0;
+  }
+
+  &__school-container {
+    padding: 3rem 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--text {
+      width: 60%;
+    }
+
+    &--logo {
+      width: 40%;
+
+      display: flex;
+      justify-content: flex-end;
+
+      &--pic {
+        width: 23rem;
+      }
+    }
+  }
+}

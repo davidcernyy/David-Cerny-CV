@@ -1,0 +1,27 @@
+.experience {
+  padding: 3rem 5rem;
+
+  &__heading {
+    padding: 4rem 0;
+  }
+
+  &__job-container {
+    padding: 3rem 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--text {
+      width: 60%;
+    }
+
+    &--logo {
+      width: 30%;
+
+      &--pic {
+        width: 100%;
+      }
+    }
+  }
+}

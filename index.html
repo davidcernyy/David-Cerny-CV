@@ -29,6 +29,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <script defer src="./src/script.js"></script>
   </head>
   <body>
     <div class="container">
@@ -100,10 +101,22 @@
           </div>
         </section>
         <section class="education">
-          <h2 class="education__heading heading-2 education-animation__header">
-            Education
-          </h2>
-          <div class="education__school-container">
+          <div class="education__heading-container">
+            <h2
+              id="education-header"
+              class="education__heading-container--heading heading-2--active education-animation__header--left"
+            >
+              Education
+            </h2>
+            <h2
+              id="certificates-header"
+              class="education__heading-container--heading heading-2 education-animation__header--right"
+            >
+              Certificates
+            </h2>
+          </div>
+
+          <div class="education__school-container active" id="school-container">
             <div
               class="education__school-container--text education-animation__text"
             >
@@ -132,6 +145,32 @@
               class="education__school-container--link button-link education-animation__link"
               >SSPŠ</a
             >
+          </div>
+
+          <div
+            id="certificates-container"
+            class="education__certificates-container hidden"
+          >
+            <a
+              class="education__certificates-container--certificate education-animation__certificates"
+              href="https://www.udemy.com/course/advanced-css-and-sass/learn/lecture/8312878?start=15#overview"
+            >
+              <img
+                class="education__certificates-container--certificate--pic"
+                src="img/certificates/UC-290d7719-b6e1-404d-830e-8215f32f64de.jpg"
+                alt="HTML/CSS certificate"
+              />
+            </a>
+            <a
+              class="education__certificates-container--certificate education-animation__certificates"
+              href="https://www.udemy.com/course/the-complete-javascript-course/learn/lecture/22628657#overview"
+            >
+              <img
+                class="education__certificates-container--certificate--pic"
+                src="img/certificates/UC-187f795b-4026-43ad-91b8-671238160c60.jpg"
+                alt="JS certificate"
+              />
+            </a>
           </div>
         </section>
         <section class="experience">

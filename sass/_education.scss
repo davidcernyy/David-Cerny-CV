@@ -1,20 +1,25 @@
 @import "./_base.scss";
 
 .education {
+  position: relative;
   padding: 3rem 5rem;
+  height: 50rem;
 
-  &__heading {
-    position: relative;
-    opacity: 0;
-    padding: 4rem 0;
+  &__heading-container {
+    display: flex;
+    justify-content: space-around;
 
-    @media only screen and (max-width: $breakpoint-xs) {
-      text-align: center;
+    &--heading {
+      position: relative;
+      opacity: 0;
+      padding: 6rem 0;
     }
   }
 
   &__school-container {
+    position: relative;
     padding: 3rem 0;
+    height: 60%;
 
     display: flex;
     justify-content: space-between;
@@ -49,7 +54,7 @@
       justify-content: flex-end;
       opacity: 0;
 
-      filter: grayscale(70%);
+      filter: grayscale(100%);
       transition: all 0.3s;
 
       @media only screen and (max-width: $breakpoint-xs) {
@@ -89,26 +94,68 @@
       }
     }
   }
+
+  &__certificates-container {
+    display: flex;
+    justify-content: space-around;
+
+    &--certificate {
+      position: relative;
+      width: 40%;
+      transition: all 0.3s;
+      filter: grayscale(100%);
+
+      &:hover {
+        transform: scale(1.1);
+        filter: none;
+      }
+
+      &--pic {
+        width: 100%;
+      }
+    }
+  }
 }
 
 @include animation-mixin-left(from-left-education, 0, -2rem, 1, 0);
+@include animation-mixin-left(out-left-education, 1, 0, 0, -2rem);
 @include animation-mixin-top(from-top-education, 0, -2rem, 1, 0);
 @include animation-mixin-bottom(from-bottom-education, 0, -1.5rem, 1, 0);
+@include animation-mixin-right(from-right-education, 0, -2rem, 1, 0);
 
 .education-animation {
   &__header {
-    animation: from-left-education 0.3s forwards;
+    &--left {
+      animation: from-left-education 0.3s forwards;
+    }
+
+    &--right {
+      animation: from-right-education 0.3s forwards;
+    }
   }
 
   &__text {
-    animation: from-left-education 0.3s 0.5s forwards;
+    animation: from-left-education 0.3s forwards;
   }
 
   &__logo {
-    animation: from-top-education 0.3s 0.5s forwards;
+    animation: from-top-education 0.3s forwards;
   }
 
   &__link {
-    animation: from-bottom-education 0.3s 0.5s forwards;
+    animation: from-bottom-education 0.3s forwards;
   }
+
+  &__certificates {
+    animation: from-bottom-education 0.3s forwards;
+  }
+}
+
+.hidden {
+  animation: out-left-education 0.3s forwards;
+  display: none;
+}
+
+.active {
+  display: flex;
 }

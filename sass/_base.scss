@@ -10,13 +10,14 @@ $color-white: #fff;
 $color-grey-dark: #333;
 $color-grey-light: #faf9f9;
 
-// Shadow variables
-$shadow-primary: 0 2rem 6rem #7c82fd25;
-
 // Font variables
 $font-primary: "Roboto", sans-serif;
 
 // Breakpoint variables
+$breakpoint-lg: 57.5em; //920px
+$breakpoint-md: 46.875em; //750px
+$breakpoint-sm: 40.625em; //650px
+$breakpoint-xs: 31.25em; //500px
 
 *,
 *::before,
@@ -29,6 +30,10 @@ $font-primary: "Roboto", sans-serif;
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+
+  @media only screen and (max-width: $breakpoint-lg) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -38,6 +43,10 @@ body {
   color: $color-grey-dark;
   padding: 5rem;
   min-height: 100vh;
+
+  @media only screen and (max-width: $breakpoint-sm) {
+    padding: 0;
+  }
 }
 
 .container {
@@ -45,5 +54,8 @@ body {
   margin: 0 auto;
   background-color: $color-grey-light;
   border-radius: 25px;
-  box-shadow: $shadow-primary;
+
+  @media only screen and (max-width: $breakpoint-md) {
+    border-radius: 0;
+  }
 }

@@ -2,6 +2,10 @@
   font-size: 6rem;
   font-weight: 900;
   letter-spacing: 0.6rem;
+
+  @media only screen and (max-width: $breakpoint-xs) {
+    font-size: 5rem;
+  }
 }
 
 .heading-2 {
@@ -14,6 +18,8 @@
   font-size: 2rem;
   font-weight: 600;
   letter-spacing: 0.2rem;
+  line-height: 2.3rem;
+  padding-bottom: 0.5rem;
 }
 
 .heading-4 {
@@ -23,10 +29,21 @@
 }
 
 .heading-5 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
+  padding-bottom: 1.5rem;
+}
+
+.heading-6 {
   font-size: 1.6rem;
   font-weight: 600;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
+
+  @media only screen and (max-width: $breakpoint-xs) {
+    font-size: 1.4rem;
+  }
 }
 
 .paragraph-1 {
@@ -37,9 +54,13 @@
 }
 
 .list-1 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 400;
   line-height: 2.3rem;
   text-decoration: none;
-  list-style: disc;
+  list-style: none;
+
+  li {
+    padding-bottom: 0.6rem;
+  }
 }

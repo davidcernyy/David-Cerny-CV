@@ -1,0 +1,92 @@
+// Animation mixins
+@mixin animation-mixin-left(
+  $name,
+  $from-opacity,
+  $from-position,
+  $to-opacity,
+  $to-position
+) {
+  @keyframes #{$name} {
+    0% {
+      opacity: $from-opacity;
+      left: $from-position;
+    }
+
+    100% {
+      opacity: $to-opacity;
+      left: $to-position;
+    }
+  }
+}
+
+@mixin animation-mixin-right(
+  $name,
+  $from-opacity,
+  $from-position,
+  $to-opacity,
+  $to-position
+) {
+  @keyframes #{$name} {
+    0% {
+      opacity: $from-opacity;
+      right: $from-position;
+    }
+
+    100% {
+      opacity: $to-opacity;
+      right: $to-position;
+    }
+  }
+}
+
+@mixin animation-mixin-bottom(
+  $name,
+  $from-opacity,
+  $from-position,
+  $to-opacity,
+  $to-position
+) {
+  @keyframes #{$name} {
+    0% {
+      opacity: $from-opacity;
+      bottom: $from-position;
+    }
+
+    100% {
+      opacity: $to-opacity;
+      bottom: $to-position;
+    }
+  }
+}
+
+@mixin animation-mixin-top(
+  $name,
+  $from-opacity,
+  $from-position,
+  $to-opacity,
+  $to-position
+) {
+  @keyframes #{$name} {
+    0% {
+      opacity: $from-opacity;
+      top: $from-position;
+    }
+
+    100% {
+      opacity: $to-opacity;
+      top: $to-position;
+    }
+  }
+}
+
+@mixin animation-mixin-background($name, $from-position, $to-position) {
+  @keyframes #{$name} {
+    0% {
+      background-position: $from-position;
+    }
+
+    100% {
+      background-position: $to-position;
+    }
+  }
+}

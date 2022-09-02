@@ -1,8 +1,16 @@
+@import "./_base.scss";
+
 .experience {
   padding: 3rem 5rem;
 
   &__heading {
     padding: 4rem 0;
+    position: relative;
+    opacity: 0;
+
+    @media only screen and (max-width: $breakpoint-xs) {
+      text-align: center;
+    }
   }
 
   &__job-container {
@@ -12,16 +20,123 @@
     justify-content: space-between;
     align-items: center;
 
+    @media only screen and (max-width: $breakpoint-xs) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
     &--text {
+      position: relative;
+      opacity: 0;
       width: 60%;
+
+      @media only screen and (max-width: $breakpoint-md) {
+        width: 70%;
+      }
+
+      @media only screen and (max-width: $breakpoint-xs) {
+        width: 100%;
+      }
     }
 
     &--logo {
       width: 30%;
+      position: relative;
+      opacity: 0;
 
-      &--pic {
-        width: 100%;
+      cursor: pointer;
+      filter: grayscale(70%);
+
+      display: flex;
+      justify-content: flex-end;
+
+      transition: all 0.3s;
+
+      @media only screen and (max-width: $breakpoint-md) {
+        width: 25%;
+      }
+
+      @media only screen and (max-width: $breakpoint-xs) {
+        display: none;
+      }
+
+      &:hover {
+        transform: scale(1.03);
+        filter: grayscale(0);
+      }
+
+      &--apcom {
+        width: 30rem;
+        margin-right: -4rem;
+
+        @media only screen and (max-width: $breakpoint-md) {
+          width: 24rem;
+          margin-right: -6rem;
+        }
+      }
+
+      &--samsung {
+        width: 27rem;
+        margin-right: -3.1rem;
+
+        @media only screen and (max-width: $breakpoint-md) {
+          width: 21rem;
+          margin-right: -5.1rem;
+        }
+      }
+
+      &--airbank {
+        width: 23rem;
+
+        @media only screen and (max-width: $breakpoint-md) {
+          width: 17rem;
+          margin-right: -3.5rem;
+        }
+      }
+
+      &--gorentals {
+        width: 23rem;
+        margin-right: -2.3rem;
+
+        @media only screen and (max-width: $breakpoint-md) {
+          width: 17rem;
+          margin-right: -4.3rem;
+        }
       }
     }
+    &--link {
+      position: relative;
+      opacity: 0;
+
+      align-self: center;
+      display: none;
+      margin-top: 4rem;
+
+      @media only screen and (max-width: $breakpoint-xs) {
+        display: block;
+      }
+    }
+  }
+}
+
+@include animation-mixin-left(from-left-experience, 0, -2rem, 1, 0);
+@include animation-mixin-top(from-top-experience, 0, -2rem, 1, 0);
+@include animation-mixin-bottom(from-bottom-experience, 0, -1.5rem, 1, 0);
+
+.experience-animation {
+  &__header {
+    animation: from-left-experience 0.3s forwards;
+  }
+
+  &__text {
+    animation: from-left-experience 0.3s 0.5s forwards;
+  }
+
+  &__logo {
+    animation: from-top-experience 0.3s 0.5s forwards;
+  }
+
+  &__link {
+    animation: from-bottom-experience 0.3s 0.5s forwards;
   }
 }
